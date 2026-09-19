@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calendar · TaskProgress</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/theme.js"></script>
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar" id="sidebar"></aside>
+    <div class="content">
+      <header class="mobile-top" id="mobileTop"></header>
+      <main class="main" id="main">
+        <div class="page-head">
+          <h1>Calendar</h1>
+          <div class="month-nav">
+            <button type="button" class="icon-btn outlined" id="prevMonth" aria-label="Previous month"></button>
+            <h2 id="monthLabel" aria-live="polite"></h2>
+            <button type="button" class="icon-btn outlined" id="nextMonth" aria-label="Next month"></button>
+            <button type="button" class="btn" id="thisMonth">Today</button>
+          </div>
+        </div>
+
+        <div class="cal-layout">
+          <section class="card" aria-label="Monthly calendar">
+            <div class="cal-week" aria-hidden="true"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div>
+            <div class="cal-grid" id="calGrid"></div>
+            <div class="cal-legend"><span>0%</span><i></i><span>100%</span></div>
+          </section>
+
+          <aside class="card day-panel" id="dayPanel" aria-live="polite">
+            <div>
+              <p class="muted small" id="dayWeekday"></p>
+              <h2 id="dayTitle" style="font-size:1.25rem"></h2>
+            </div>
+            <div class="day-progress"><strong id="dayPercent">0%</strong><span class="muted" id="dayCount">0 / 0 completed</span></div>
+            <div class="bar"><div class="bar-fill" id="dayBar"></div></div>
+            <div class="card-head" style="margin:6px 0 0">
+              <h3>Tasks</h3>
+              <button type="button" class="btn" id="addTaskBtn">Add task</button>
+            </div>
+            <div id="dayList"></div>
+          </aside>
+        </div>
+      </main>
+    </div>
+  </div>
+  <nav class="bottomnav" id="bottomnav" aria-label="Main"></nav>
+  <div class="toasts" id="toasts" aria-live="polite"></div>
+  <script src="js/common.js"></script>
+  <script src="js/tasks.js"></script>
+  <script src="js/calendar.js"></script>
+</body>
+</html>

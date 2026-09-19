@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard · TaskProgress</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/theme.js"></script>
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar" id="sidebar"></aside>
+    <div class="content">
+      <header class="mobile-top" id="mobileTop"></header>
+      <main class="main" id="main">
+        <div class="page-head">
+          <div>
+            <h1 id="greeting">Welcome</h1>
+            <p class="muted" id="todayDate"></p>
+          </div>
+        </div>
+
+        <section class="hero card" aria-labelledby="heroTitle">
+          <div class="ring">
+            <svg viewBox="0 0 120 120" aria-hidden="true">
+              <circle class="ring-bg" cx="60" cy="60" r="52"/>
+              <circle class="ring-fg zero" id="ringFg" cx="60" cy="60" r="52"/>
+            </svg>
+            <div class="ring-num"><div><strong id="percent">0</strong><span>%</span></div></div>
+          </div>
+          <div class="hero-text">
+            <h2 id="heroTitle">Today's progress</h2>
+            <p class="hero-count"><strong id="heroDone">0</strong> / <span id="heroTotal">0</span> tasks completed</p>
+            <div class="bar" id="heroBarWrap" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Today's progress">
+              <div class="bar-fill" id="heroBar"></div>
+            </div>
+            <p class="muted" id="heroMsg"></p>
+          </div>
+        </section>
+
+        <section class="stats" aria-label="Today at a glance">
+          <div class="stat"><span class="stat-label">Total tasks today</span><strong class="stat-value" id="statTotal">0</strong></div>
+          <div class="stat"><span class="stat-label">Completed</span><strong class="stat-value" id="statDone">0</strong></div>
+          <div class="stat"><span class="stat-label">Remaining</span><strong class="stat-value" id="statLeft">0</strong></div>
+          <div class="stat"><span class="stat-label">Current streak</span><strong class="stat-value" id="statStreak">0 days</strong><span class="stat-sub" id="statLongest">&nbsp;</span></div>
+          <div class="stat"><span class="stat-label">Today</span><strong class="stat-value" id="statDate" style="font-size:1.15rem;line-height:1.5"></strong></div>
+        </section>
+
+        <div class="grid-2">
+          <section class="card" aria-labelledby="tasksTitle">
+            <div class="card-head">
+              <h2 id="tasksTitle">Today's tasks</h2>
+              <button type="button" class="btn primary" id="addTaskBtn">Add task</button>
+            </div>
+            <div id="taskList"></div>
+          </section>
+          <section class="card" aria-labelledby="weekTitle">
+            <div class="card-head"><h2 id="weekTitle">Last 7 days</h2></div>
+            <div id="weekBody"><div class="chart-box"><canvas id="weekChart"></canvas></div></div>
+          </section>
+        </div>
+      </main>
+    </div>
+  </div>
+  <nav class="bottomnav" id="bottomnav" aria-label="Main"></nav>
+  <div class="toasts" id="toasts" aria-live="polite"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/tasks.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

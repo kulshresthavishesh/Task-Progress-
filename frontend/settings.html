@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Settings · TaskProgress</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/theme.js"></script>
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar" id="sidebar"></aside>
+    <div class="content">
+      <header class="mobile-top" id="mobileTop"></header>
+      <main class="main" id="main">
+        <div class="page-head"><h1>Settings</h1></div>
+
+        <div class="stack" style="max-width:620px">
+          <section class="card">
+            <div class="card-head"><h2>Profile</h2></div>
+            <form class="stack" id="profileForm" novalidate>
+              <label class="field"><span>Name</span><input name="name" maxlength="50" required></label>
+              <label class="field"><span>Email</span><input name="email" type="email" readonly></label>
+              <p class="muted small" id="memberSince"></p>
+              <p class="form-error" id="profileError" role="alert" hidden></p>
+              <div><button class="btn primary" type="submit">Save changes</button></div>
+            </form>
+          </section>
+
+          <section class="card">
+            <div class="card-head"><h2>Change password</h2></div>
+            <form class="stack" id="passwordForm" novalidate>
+              <label class="field"><span>Current password</span><input name="currentPassword" type="password" autocomplete="current-password" required></label>
+              <label class="field"><span>New password</span><input name="newPassword" type="password" autocomplete="new-password" minlength="8" required></label>
+              <label class="field"><span>Confirm new password</span><input name="confirmPassword" type="password" autocomplete="new-password" required></label>
+              <p class="form-error" id="passwordError" role="alert" hidden></p>
+              <div><button class="btn primary" type="submit">Update password</button></div>
+            </form>
+          </section>
+
+          <section class="card">
+            <div class="card-head"><h2>Appearance</h2></div>
+            <div class="seg" role="group" aria-label="Theme">
+              <button type="button" data-set-theme="light" aria-pressed="false">Light</button>
+              <button type="button" data-set-theme="dark" aria-pressed="false">Dark</button>
+            </div>
+          </section>
+
+          <section class="card">
+            <div class="card-head"><h2>Session</h2></div>
+            <button class="btn" type="button" data-logout>Log out</button>
+          </section>
+        </div>
+      </main>
+    </div>
+  </div>
+  <nav class="bottomnav" id="bottomnav" aria-label="Main"></nav>
+  <div class="toasts" id="toasts" aria-live="polite"></div>
+  <script src="js/common.js"></script>
+  <script src="js/settings.js"></script>
+</body>
+</html>

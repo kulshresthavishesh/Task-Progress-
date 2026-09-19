@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tasks · TaskProgress</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/theme.js"></script>
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar" id="sidebar"></aside>
+    <div class="content">
+      <header class="mobile-top" id="mobileTop"></header>
+      <main class="main" id="main">
+        <div class="page-head">
+          <div>
+            <h1>Tasks</h1>
+            <p class="muted" id="dateLabel"></p>
+          </div>
+          <div class="date-nav">
+            <button type="button" class="icon-btn outlined" id="prevDay" aria-label="Previous day"></button>
+            <input type="date" id="dateInput" aria-label="Choose a date">
+            <button type="button" class="icon-btn outlined" id="nextDay" aria-label="Next day"></button>
+            <button type="button" class="btn" id="todayBtn">Today</button>
+          </div>
+        </div>
+
+        <section class="card summary-strip" aria-label="Progress for this day">
+          <strong id="sumPct">0%</strong>
+          <span class="muted" id="sumText">0 / 0 completed</span>
+          <div class="bar"><div class="bar-fill" id="sumBar"></div></div>
+        </section>
+
+        <section class="card">
+          <div class="card-head">
+            <h2 id="listTitle">Tasks</h2>
+            <button type="button" class="btn primary" id="addTaskBtn">Add task</button>
+          </div>
+          <div id="taskList"></div>
+        </section>
+      </main>
+    </div>
+  </div>
+  <nav class="bottomnav" id="bottomnav" aria-label="Main"></nav>
+  <div class="toasts" id="toasts" aria-live="polite"></div>
+  <script src="js/common.js"></script>
+  <script src="js/tasks.js"></script>
+  <script src="js/tasks-page.js"></script>
+</body>
+</html>
