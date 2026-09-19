@@ -1,6 +1,6 @@
 // common.js - helpers shared by every page: API calls, auth guard, dates, icons, toasts, dialogs, layout shell.
 
-const API_BASE = 'http://localhost:5000/api';
+const API_BASE = 'https://name-task-progress-backend.onrender.com';
 
 const TOKEN_KEY = 'tp-token';
 const USER_KEY = 'tp-user';
